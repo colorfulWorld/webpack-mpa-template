@@ -9,19 +9,19 @@
 // globals 声明在代码中的自定义全局变量
 
 module.exports = {
-    root: true, 
-    parser: 'babel-eslint',
-    parserOptions: {
-        sourceType: 'module'
-    },
-    env: {
-        browser: true,
-    },
-    rules: {
-        "indent": ["error", 2],
-        "quotes": ["error", "double"],
-        "semi": ["error", "always"],
-        "no-console": "error",
-        "arrow-parens": 0
-    }
+  root: true,
+  parser: 'babel-eslint',
+  parserOptions: {
+    sourceType: 'module',
+  },
+  env: {
+    browser: true,
+  },
+  rules: {
+    indent: ['error', 2],
+    quotes: ['error', 'single'],
+    semi: ['error', '0'],
+    'no-console': 'error',
+    'arrow-parens': 0,
+  },
 }
