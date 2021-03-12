@@ -1,5 +1,4 @@
 const path = require('path')
-const utils = require('./utils')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const devMode = process.env.NODE_ENV !== 'production'
 const rules = [
@@ -40,7 +39,7 @@ const rules = [
         options: {
           limit: 5 * 1024, //小于这个时将会已base64位图片打包处理
           // 图片文件输出的文件夹
-          name: utils.assetsPath('img/[name].[hash:7].[ext]'),
+          outputPath: 'images',
         },
       },
     ],
@@ -50,7 +49,6 @@ const rules = [
     loader: 'url-loader',
     options: {
       limit: 10000,
-      name: utils.assetsPath('fonts/[name].[hash:7].[ext]'),
     },
   },
   {

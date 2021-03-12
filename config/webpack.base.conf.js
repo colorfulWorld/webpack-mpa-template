@@ -44,7 +44,7 @@ function getEntry(PAGES_DIR) {
   return entry
 }
 let entrys = getEntry('./src/pages/')
-
+console.log("getEntry('./src/pages/')::->", getEntry('./src/pages/'))
 module.exports = {
   entry: entrys,
   module: {

@@ -2,7 +2,7 @@
 import 'lib-flexible'
 
 //业务配置
-import '../../css/common.css';
+import '../../css/common.less';
 import './index.less';
 
 window.onload = function(){

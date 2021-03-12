@@ -1,5 +1,4 @@
 const path = require('path')
-const utils = require('./utils')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 // 清除目录等
@@ -16,8 +15,7 @@ const webpackConfigProd = {
     path: path.resolve(__dirname, '../dist'),
     // 打包多出口文件
     // 生成 a.bundle.[hash].js  b.bundle.[hash].js
-    filename: utils.assetsPath('./js/[name].[chunkhash:8].js'),
-    chunkFilename: utils.assetsPath('js/[id].[chunkhash:8].js'),
+    filename: './js/[name].[chunkhash:8].js',
     publicPath: './',
   },
   devtool: 'none',
@@ -32,7 +30,7 @@ const webpackConfigProd = {
     }),
     // 分离css插件参数为提取出去的路径
     new miniCssExtractPlugin({
-      filename: utils.assetsPath('css/[name].[contenthash:8].min.css'),
+      filename: 'css/[name].[contenthash:8].min.css',
     }),
     //压缩css
     new OptimizeCSSPlugin({

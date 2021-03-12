@@ -2,7 +2,8 @@
 import 'lib-flexible'
 
 //业务配置
-import '../../css/common.css';
+import '../../css/common.less';
+// import '../../css/test.css';
 import './index.less';
 import {title} from "../../js/common";
 
