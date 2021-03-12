@@ -1,5 +1,5 @@
 {
-  "name": "webpack-mpa-template",
+  "name": "@ecpark/webpack-mpa-template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "type": "git",
     "url": "http://git.ym/g-web/webpack-mpa-template.git"
   },
+  "author": "chenmh",
   "license": "",
   "devDependencies": {
     "@babel/core": "^7.4.0",

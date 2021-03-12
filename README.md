@@ -1,5 +1,4 @@
-# webpack-mpa-template
-基于webpack 构建的多页应用配置
+# webpack管理多页面（mpa）应用
 
 在根目录下通过以下指令（xxx代表创建一个单页名称） 
 
