@@ -7,6 +7,7 @@ const purifyCssWebpack = require('purifycss-webpack')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 //静态资源输出
 const copyWebpackPlugin = require('copy-webpack-plugin')
+const isDev = process.env.NODE_ENV === 'development'
 
 const rules = require('./webpack.rules.conf.js')
 // 获取html-webpack-plugin参数的方法
@@ -19,14 +20,13 @@ let getHtmlConfig = function (name, chunks) {
     inject: true,
     hash: true, //开启hash  ?[hash]
     chunks: chunks,
-    minify:
-      process.env.NODE_ENV === 'development'
-        ? false
-        : {
-            removeComments: true, //移除HTML中的注释
-            collapseWhitespace: true, //折叠空白区域 也就是压缩代码
-            removeAttributeQuotes: true, //去除属性引用
-          },
+    minify: isDev
+      ? false
+      : {
+          removeComments: true, //移除HTML中的注释
+          collapseWhitespace: true, //折叠空白区域 也就是压缩代码
+          removeAttributeQuotes: true, //去除属性引用
+        },
   }
 }
 

@@ -27,6 +27,7 @@ const webpackConfigDev = {
     new webpack.HotModuleReplacementPlugin(),
   ],
   // devtool: "source-map",  // 开启调试模式
+  devtool: 'source-map',
   module: {
     rules: [],
   },
