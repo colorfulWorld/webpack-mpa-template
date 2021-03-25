@@ -9,6 +9,9 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 const copyWebpackPlugin = require('copy-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 
+const Happypack = require('happypack')
+const HappyPackThreadPool = Happypack.ThreadPool({ size: 5 })
+
 const rules = require('./webpack.rules.conf.js')
 // 获取html-webpack-plugin参数的方法
 let getHtmlConfig = function (name, chunks) {
@@ -48,6 +51,8 @@ console.log("getEntry('./src/pages/')::->", getEntry('./src/pages/'))
 module.exports = {
   entry: entrys,
   module: {
+    //不去解析jquery中的依赖库
+    noParse: /jquery|chartjs/,
     rules: [...rules],
   },
   //将外部变量或者模块加载进来
@@ -68,6 +73,13 @@ module.exports = {
     // 消除冗余的css代码
     new purifyCssWebpack({
       paths: glob.sync(path.join(__dirname, '../src/pages/*/*.html')),
+    }),
+    new Happypack({
+      // 用唯一的标识符id，来代表当前的HappyPack是用来处理一类特定的文件
+      id: 'babel',
+      // 如何处理.js文件，用法和Loader配置中一样
+      loaders: ['babel-loader?cacheDirectory'],
+      threadPool: HappyPackThreadPool,
     }),
   ],
   resolve: {

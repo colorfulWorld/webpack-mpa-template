@@ -23,11 +23,8 @@ const rules = [
   },
   {
     test: /\.js$/,
-    use: ['babel-loader'], //"eslint-loader"
-    // 让此loader 提最前执行
-    enforce: 'pre',
-    // Webpack 忽略对部分没采用模块化的文件的递归解析和处理，这样做的好处是能提高构建性能
-    noParse: /jquery|chartjs/,
+    use: ['happypack/loader?id=babel'],
+    include: [path.resolve(__dirname, 'src')],
     exclude: '/node_modules/', // 不检查node_modules下的js文件
     // include: [path.resolve(__dirname, 'src')], // 指定检查的目录
     // options: { // 这里的配置项参数将会被传递到 eslint 的 CLIEngine
@@ -78,6 +75,10 @@ const rules = [
       'less-loader',
     ],
     exclude: '/node_modules/',
+  },
+  {
+    test: /\.svg$/,
+    use: ['svg-inline-loader'],
   },
 ]
 module.exports = rules
