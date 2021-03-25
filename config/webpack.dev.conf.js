@@ -11,7 +11,8 @@ const webpackConfigDev = {
     filename: './js/[name].bundle.js',
   },
   devServer: {
-    contentBase: path.join(__dirname, '../dist'),
+    contentBase: path.join(__dirname, '../src'), //本地服务器所加载文件的目录
+    watchContentBase: true,
     publicPath: '/',
     host: '127.0.0.1',
     port: '8089',

@@ -45,7 +45,7 @@ const webpackConfigProd = {
         compress: {
           // warnings: false, //使用 terser-webpack-plugin 代替，实现生产去除 console.log  @@@待补充 https://blog.csdn.net/sinat_35538827/article/details/99672544
           drop_debugger: false,
-          drop_console: true,
+          drop_console: false,
         },
       },
     }),
