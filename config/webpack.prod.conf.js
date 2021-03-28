@@ -47,6 +47,12 @@ const webpackConfigProd = {
           drop_debugger: false,
           drop_console: false,
         },
+        output: {
+          // 最紧凑的输出
+          beautify: false,
+          // 删除所有的注释
+          comments: false,
+        }
       },
     }),
   ],
